@@ -1,8 +1,6 @@
 # A multidimensional normative database of experiential ratings for German nouns
 
-Repository accompanying the paper 
-
-**"A multidimensional normative database of experiential ratings for German nouns"** by Cristina Cara, Christian Bellebaum, Laura Bechtold, and Marta Ghio.
+Repository accompanying the paper **"A multidimensional normative database of experiential ratings for German nouns"** by Cristina Cara, Christian Bellebaum, Laura Bechtold, and Marta Ghio.
 
 **Affiliation:** Heinrich Heine University Düsseldorf, Faculty of Mathematics and Natural Sciences, Department of Biological Psychology, Germany  
 **Correspondence:** Cristina Cara — cristina.cara@hhu.de  
