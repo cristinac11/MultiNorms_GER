@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "Please cite the accompanying manuscript when using this resource. The preferred citation will be added here when the preprint is publicly available."
+
+title: "A multidimensional normative database of experiential ratings for German nouns"
+
+authors:
+  - family-names: Cara
+    given-names: Cristina
+  - family-names: Bellebaum
+    given-names: Christian
+  - family-names: Bechtold
+    given-names: Laura
+  - family-names: Ghio
+    given-names: Marta
+
+version: "1.0.0"
+url: "https://cristinac11.github.io/MultiNorms_GER/"
+repository-code: "https://github.com/cristinac11/MultiNorms_GER"

@@ -1,0 +1,98 @@
+﻿variable,label,category,description
+word,German word,Identifier,Lexical item in German.
+size_mean,Size mean,Experiential ratings,Mean rating for size.
+size_std,Size standard deviation,Experiential ratings,Standard deviation of ratings for size.
+size_max,Size maximum,Experiential ratings,Maximum observed rating for size.
+size_min,Size minimum,Experiential ratings,Minimum observed rating for size.
+numerosity_mean,Numerosity mean,Experiential ratings,Mean rating for numerosity.
+numerosity_std,Numerosity standard deviation,Experiential ratings,Standard deviation of ratings for numerosity.
+numerosity_max,Numerosity maximum,Experiential ratings,Maximum observed rating for numerosity.
+numerosity_min,Numerosity minimum,Experiential ratings,Minimum observed rating for numerosity.
+space_mean,Space mean,Experiential ratings,Mean rating for space.
+space_std,Space standard deviation,Experiential ratings,Standard deviation of ratings for space.
+space_max,Space maximum,Experiential ratings,Maximum observed rating for space.
+space_min,Space minimum,Experiential ratings,Minimum observed rating for space.
+time_mean,Time mean,Experiential ratings,Mean rating for time.
+time_std,Time standard deviation,Experiential ratings,Standard deviation of ratings for time.
+time_max,Time maximum,Experiential ratings,Maximum observed rating for time.
+time_min,Time minimum,Experiential ratings,Minimum observed rating for time.
+cognition_mean,Cognition mean,Experiential ratings,Mean rating for cognition.
+cognition_std,Cognition standard deviation,Experiential ratings,Standard deviation of ratings for cognition.
+cognition_max,Cognition maximum,Experiential ratings,Maximum observed rating for cognition.
+cognition_min,Cognition minimum,Experiential ratings,Minimum observed rating for cognition.
+social_interaction_mean,Social interaction mean,Experiential ratings,Mean rating for social interaction.
+social_interaction_std,Social interaction standard deviation,Experiential ratings,Standard deviation of ratings for social interaction.
+social_interaction_max,Social interaction maximum,Experiential ratings,Maximum observed rating for social interaction.
+social_interaction_min,Social interaction minimum,Experiential ratings,Minimum observed rating for social interaction.
+arousal_mean,Arousal mean,Experiential ratings,Mean rating for arousal.
+arousal_std,Arousal standard deviation,Experiential ratings,Standard deviation of ratings for arousal.
+arousal_max,Arousal maximum,Experiential ratings,Maximum observed rating for arousal.
+arousal_min,Arousal minimum,Experiential ratings,Minimum observed rating for arousal.
+emotion_mean,Emotion mean,Experiential ratings,Mean rating for emotion.
+emotion_std,Emotion standard deviation,Experiential ratings,Standard deviation of ratings for emotion.
+emotion_max,Emotion maximum,Experiential ratings,Maximum observed rating for emotion.
+emotion_min,Emotion minimum,Experiential ratings,Minimum observed rating for emotion.
+interoception_mean,Interoception mean,Experiential ratings,Mean rating for interoception.
+interoception_std,Interoception standard deviation,Experiential ratings,Standard deviation of ratings for interoception.
+interoception_max,Interoception maximum,Experiential ratings,Maximum observed rating for interoception.
+interoception_min,Interoception minimum,Experiential ratings,Minimum observed rating for interoception.
+visual_perception_mean,Visual perception mean,Experiential ratings,Mean rating for visual perception.
+visual_perception_std,Visual perception standard deviation,Experiential ratings,Standard deviation of ratings for visual perception.
+visual_perception_max,Visual perception maximum,Experiential ratings,Maximum observed rating for visual perception.
+visual_perception_min,Visual perception minimum,Experiential ratings,Minimum observed rating for visual perception.
+auditory_perception_mean,Auditory perception mean,Experiential ratings,Mean rating for auditory perception.
+auditory_perception_std,Auditory perception standard deviation,Experiential ratings,Standard deviation of ratings for auditory perception.
+auditory_perception_max,Auditory perception maximum,Experiential ratings,Maximum observed rating for auditory perception.
+auditory_perception_min,Auditory perception minimum,Experiential ratings,Minimum observed rating for auditory perception.
+tactile_perception_mean,Tactile perception mean,Experiential ratings,Mean rating for tactile perception.
+tactile_perception_std,Tactile perception standard deviation,Experiential ratings,Standard deviation of ratings for tactile perception.
+tactile_perception_max,Tactile perception maximum,Experiential ratings,Maximum observed rating for tactile perception.
+tactile_perception_min,Tactile perception minimum,Experiential ratings,Minimum observed rating for tactile perception.
+olfactory_perception_mean,Olfactory perception mean,Experiential ratings,Mean rating for olfactory perception.
+olfactory_perception_std,Olfactory perception standard deviation,Experiential ratings,Standard deviation of ratings for olfactory perception.
+olfactory_perception_max,Olfactory perception maximum,Experiential ratings,Maximum observed rating for olfactory perception.
+olfactory_perception_min,Olfactory perception minimum,Experiential ratings,Minimum observed rating for olfactory perception.
+gustatory_perception_mean,Gustatory perception mean,Experiential ratings,Mean rating for gustatory perception.
+gustatory_perception_std,Gustatory perception standard deviation,Experiential ratings,Standard deviation of ratings for gustatory perception.
+gustatory_perception_max,Gustatory perception maximum,Experiential ratings,Maximum observed rating for gustatory perception.
+gustatory_perception_min,Gustatory perception minimum,Experiential ratings,Minimum observed rating for gustatory perception.
+action_mean,Action mean,Experiential ratings,Mean rating for action.
+action_std,Action standard deviation,Experiential ratings,Standard deviation of ratings for action.
+action_max,Action maximum,Experiential ratings,Maximum observed rating for action.
+action_min,Action minimum,Experiential ratings,Minimum observed rating for action.
+valence_abs_mean_rescaled,Rescaled absolute valence mean,Derived valence measure,Rescaled mean absolute valence retained as a derived variable
+valence_mean,Valence mean,Valence,Mean signed valence rating.
+valence_std,Valence standard deviation,Valence,Standard deviation of signed valence ratings.
+valence_max,Valence maximum,Valence,Maximum observed signed valence rating.
+valence_min,Valence minimum,Valence,Minimum observed signed valence rating.
+valence_abs_mean,Absolute valence mean,Valence,Mean absolute valence rating.
+valence_abs_std,Absolute valence standard deviation,Valence,Standard deviation of absolute valence ratings.
+valence_abs_max,Absolute valence maximum,Valence,Maximum observed absolute valence rating.
+valence_abs_min,Absolute valence minimum,Valence,Minimum observed absolute valence rating.
+familiarity_mean,Familiarity mean,Lexical ratings,Mean rating for familiarity.
+familiarity_std,Familiarity standard deviation,Lexical ratings,Standard deviation of ratings for familiarity.
+familiarity_max,Familiarity maximum,Lexical ratings,Maximum observed rating for familiarity.
+familiarity_min,Familiarity minimum,Lexical ratings,Minimum observed rating for familiarity.
+concreteness_mean,Concreteness mean,Lexical ratings,Mean rating for concreteness.
+concreteness_std,Concreteness standard deviation,Lexical ratings,Standard deviation of ratings for concreteness.
+concreteness_max,Concreteness maximum,Lexical ratings,Maximum observed rating for concreteness.
+concreteness_min,Concreteness minimum,Lexical ratings,Minimum observed rating for concreteness.
+participant_count,Number of participants,Summary,Number of participants contributing ratings for the word.
+dominant_dimension,Dominant dimension,Summary,Experiential dimension with the highest mean rating.
+exclusivity_score,Exclusivity score,Summary,Degree to which the experiential profile is concentrated in one dimension.
+word_length,Word length,Lexical variables,Length of the German word in characters.
+subtlex,SUBTLEX frequency,Lexical variables,SUBTLEX-based lexical frequency value for the word.
+germanet_dimension_0,GermaNet semantic field 0,GermaNet,Associated GermaNet semantic field; multiple fields may be present for a word.
+germanet_dimension_1,GermaNet semantic field 1,GermaNet,Associated GermaNet semantic field; multiple fields may be present for a word.
+germanet_dimension_2,GermaNet semantic field 2,GermaNet,Associated GermaNet semantic field; multiple fields may be present for a word.
+germanet_dimension_3,GermaNet semantic field 3,GermaNet,Associated GermaNet semantic field; multiple fields may be present for a word.
+germanet_dimension_4,GermaNet semantic field 4,GermaNet,Associated GermaNet semantic field; multiple fields may be present for a word.
+germanet_dimension_5,GermaNet semantic field 5,GermaNet,Associated GermaNet semantic field; multiple fields may be present for a word.
+germanet_dimension_6,GermaNet semantic field 6,GermaNet,Associated GermaNet semantic field; multiple fields may be present for a word.
+germanet_dimension_7,GermaNet semantic field 7,GermaNet,Associated GermaNet semantic field; multiple fields may be present for a word.
+germanet_dimension_8,GermaNet semantic field 8,GermaNet,Associated GermaNet semantic field; multiple fields may be present for a word.
+germanet_dimension_9,GermaNet semantic field 9,GermaNet,Associated GermaNet semantic field; multiple fields may be present for a word.
+germanet_dimension_10,GermaNet semantic field 10,GermaNet,Associated GermaNet semantic field; multiple fields may be present for a word.
+germanet_dimension_11,GermaNet semantic field 11,GermaNet,Associated GermaNet semantic field; multiple fields may be present for a word.
+germanet_dimension_12,GermaNet semantic field 12,GermaNet,Associated GermaNet semantic field; multiple fields may be present for a word.
+germanet_dimension_13,GermaNet semantic field 13,GermaNet,Associated GermaNet semantic field; multiple fields may be present for a word.

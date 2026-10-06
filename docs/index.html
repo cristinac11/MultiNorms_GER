@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Interactive explorer for a multidimensional normative database of experiential ratings for German nouns.">
+  <title>A multidimensional normative database of experiential ratings for German nouns</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script defer src="assets/config.js"></script>
+  <script defer src="assets/vendor/plotly-3.3.1.min.js"></script>
+  <script defer src="assets/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#home" aria-label="Home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span id="brand-name">MultiNorms_GER</span>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+        <a href="#visualize">Visualize</a>
+        <a href="#explore">Explore</a>
+        <a href="#variables">Variables</a>
+        <a href="#download">Download</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Research dataset</p>
+          <h1 id="site-title">A multidimensional normative database of experiential ratings for German nouns</h1>
+          <div class="hero-actions">
+            <a class="button primary" href="#explore">Explore the data</a>
+            <a class="button secondary" id="hero-download" href="data/MultiNorms_GER_summary_level_dataset.csv" download>Download summary CSV</a>
+          </div>
+          <p class="version-line"><span id="site-version">v1.0.0</span> · UTF-8 CSV · Browser-based explorer</p>
+        </div>
+        <div class="profile-preview" aria-label="Example experiential profile">
+          <div class="preview-head">
+            <div>
+              <span class="mini-label">Example profile</span>
+              <strong id="preview-word">—</strong>
+            </div>
+            <span class="dimension-pill" id="preview-dominant">Loading</span>
+          </div>
+          <div id="preview-bars" class="mini-bars" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dataset-overview-section" id="variables">
+      <div class="container">
+        <div class="section-heading">
+          <div><p class="eyebrow">Dataset overview</p><h2>What the dataset contains</h2></div>
+          <a class="text-link" href="data/codebook.csv" download>Download codebook →</a>
+        </div>
+        <div class="dataset-overview-grid">
+          <article class="feature-card dataset-card-primary">
+            <span>01</span>
+            <h3> <strong id="metric-words">1,985</strong> German nouns </h3>
+          </article>
+          <article class="feature-card dataset-card-primary">
+            <span>02</span>
+            <h3>16 experiential dimensions</h3>
+            <p>Size, numerosity, space, time, cognition, social interaction, arousal, emotion, valence, interoception, action, visual, auditory, tactile, olfactory, and gustatory.</p>
+          </article>
+          <article class="feature-card">
+            <span>03</span>
+            <h3>Lexical ratings</h3>
+            <p>Familiarity and concreteness with descriptive statistics.</p>
+          </article>
+          <article class="feature-card">
+            <span>04</span>
+            <h3>Derived summaries</h3>
+            <p>Participant counts, dominant experiential dimension, and the exclusivity score for each word.</p>
+          </article>
+          <article class="feature-card">
+            <span>05</span>
+            <h3>Semantic annotations</h3>
+            <p>Up to fourteen associated GermaNet semantic-field entries per lexical item.</p>
+          </article>
+        </div>
+        <span id="metric-participants" hidden>—</span>
+      </div>
+    </section>
+
+
+    <section class="section visualization-section" id="visualize">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Interactive visualization</p>
+            <h2>Word profile visualization</h2>
+          </div>
+          <p>Choose a word and switch between radar, bar, and heatmap views. The plots use the mean ratings across the 16 experiential dimensions.</p>
+        </div>
+
+        <div class="visualization-shell">
+          <div class="visualization-controls">
+            <label class="field">
+              <span>Select a word</span>
+              <select id="toolkit-word-select" aria-label="Select a word"></select>
+            </label>
+
+            <label class="field">
+              <span>Select plot type</span>
+              <select id="toolkit-plot-select" aria-label="Select plot type">
+                <option value="radar">Radar plot</option>
+                <option value="bar">Bar plot</option>
+                <option value="heatmap">Heatmap</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="plot-card">
+            <div id="toolkit-plot" class="toolkit-plot" role="img" aria-label="Interactive experiential profile plot"></div>
+            <p class="chart-note">All experiential dimensions are shown on the 1–7 rating scale; signed valence is rescaled to 1–7 for visualization. Use the camera icon in the Plotly toolbar to export the current figure as a PNG.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="explore">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Interactive explorer</p>
+            <h2>Search and compare words</h2>
+          </div>
+          <p>Select a rating dimension, filter the records, and open any word for its complete experiential profile.</p>
+        </div>
+
+        <div id="load-error" class="notice error hidden" role="alert"></div>
+
+        <div class="explorer-shell">
+          <div class="filter-grid">
+            <label class="field search-field">
+              <span>Search German word</span>
+              <input id="search-input" type="search" placeholder="e.g., Abgrund" autocomplete="off">
+            </label>
+            <label class="field">
+              <span>Displayed dimension</span>
+              <select id="dimension-select"></select>
+            </label>
+            <label class="field">
+              <span>Dominant dimension</span>
+              <select id="dominant-select"><option value="">All dimensions</option></select>
+            </label>
+            <label class="field">
+              <span>Minimum exclusivity: <strong id="exclusivity-value">0.00</strong></span>
+              <input id="exclusivity-input" type="range" min="0" max="0.5" value="0" step="0.01">
+            </label>
+          </div>
+
+          <div class="table-toolbar">
+            <p id="result-count" aria-live="polite">Loading data…</p>
+            <div class="toolbar-actions">
+              <label class="compact-field">Rows
+                <select id="page-size"><option>10</option><option>25</option><option>50</option><option>100</option></select>
+              </label>
+              <button class="button small secondary" id="reset-filters" type="button">Reset</button>
+              <button class="button small primary" id="download-filtered" type="button">Download filtered CSV</button>
+            </div>
+          </div>
+
+          <div class="table-wrap">
+            <table id="data-table">
+              <thead>
+                <tr>
+                  <th><button data-sort="word">Word <span></span></button></th>
+                  <th><button data-sort="dominant_dimension">Dominant dimension <span></span></button></th>
+                  <th><button id="dimension-sort" data-sort="">Selected rating <span></span></button></th>
+                  <th><button data-sort="exclusivity_score">Exclusivity <span></span></button></th>
+                  <th><button data-sort="concreteness_mean">Concreteness <span></span></button></th>
+                  <th><button data-sort="familiarity_mean">Familiarity <span></span></button></th>
+                  <th><button data-sort="participant_count">Raters <span></span></button></th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          <div class="pagination" aria-label="Table pagination">
+            <button id="prev-page" type="button">Previous</button>
+            <span id="page-info">Page 1 of 1</span>
+            <button id="next-page" type="button">Next</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section download-section" id="download">
+      <div class="container download-card">
+        <div>
+          <p class="eyebrow">Reuse the resource</p>
+          <h2>Download, cite, and reproduce</h2>
+          <p>The downloadable files preserve German characters using UTF-8 encoding. The summary-level dataset contains item-level descriptive statistics and derived measures; the participant-level dataset provides the corresponding anonymized participant-level ratings.</p>
+          <p class="authors-line"><strong>Authors:</strong> <span id="site-authors">Cristina Cara, Christian Bellebaum, Laura Bechtold, Marta Ghio</span></p>
+          <p><strong>Affiliation:</strong> <span id="site-affiliation">Heinrich Heine University Düsseldorf, Faculty of Mathematics and Natural Sciences, Department of Biological Psychology, Germany</span></p>
+          <p><strong>Correspondence:</strong> <span id="correspondence-name">Cristina Cara</span>, <span id="correspondence-address">Department of Biological Psychology, Faculty of Mathematics and Natural Sciences, Heinrich Heine University Düsseldorf, Universitätsstraße 1, 40225 Düsseldorf, Germany</span>. <a id="correspondence-email" href="mailto:cristina.cara@hhu.de">cristina.cara@hhu.de</a></p>
+          <p class="chart-note"><strong>Semantic annotations.</strong> GermaNet semantic-field annotations are included with permission from GermaNet. GermaNet is acknowledged and cited in the accompanying documentation and manuscript.</p>
+          <p class="chart-note" id="citation-guidance"><strong>How to cite.</strong> Please cite the accompanying manuscript when using this resource. The preprint citation will be provided here once available; after peer-reviewed publication, the final article will become the preferred citation.</p>
+          <button class="button ghost hidden" id="copy-citation" type="button">Copy publication citation</button>
+        </div>
+        <div class="download-actions">
+          <a class="button primary" id="main-download" href="data/MultiNorms_GER_summary_level_dataset.csv" download>Download summary CSV</a>
+          <a class="button secondary" id="participant-download" href="data/MultiNorms_GER_participant_level_dataset.csv" download>Download participant-level CSV</a>
+          <a class="button secondary" href="data/codebook.csv" download>Download codebook</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <p>© <span id="current-year"></span> <span id="footer-title">A multidimensional normative database of experiential ratings for German nouns</span></p>
+      <div class="footer-meta">
+        <p>Static, privacy-friendly, and analytics-free.</p>
+        <p class="ai-note">Website development assisted by OpenAI ChatGPT.</p>
+      </div>
+    </div>
+  </footer>
+
+  <dialog id="word-dialog" class="word-dialog">
+    <div class="dialog-head">
+      <div><p class="eyebrow">Word profile</p><h2 id="dialog-word">—</h2></div>
+      <button class="icon-button" id="close-dialog" aria-label="Close word profile">×</button>
+    </div>
+    <div class="dialog-meta" id="dialog-meta"></div>
+    <div class="dialog-content">
+      <section>
+        <h3>Experiential profile</h3>
+        <div id="profile-chart" class="profile-chart"></div>
+        <p class="chart-note">Bars show mean ratings. Standard deviations are reported beside each value.</p>
+      </section>
+      <aside>
+        <h3>Summary</h3>
+        <dl id="word-summary" class="summary-list"></dl>
+        <h3>GermaNet fields</h3>
+        <div id="germanet-tags" class="tag-list"></div>
+      </aside>
+    </div>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
