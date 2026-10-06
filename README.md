@@ -28,5 +28,5 @@ The accompanying website provides an interactive interface for exploring the dat
 ├── CITATION.cff
 ├── analysis/       # analysis code
 ├── instructions/   # study instructions
-├── materials/      # datasets, codebook, and study materials
+├── materials/      # datasets and codebook
 └── docs/           # GitHub Pages website
