@@ -18,7 +18,7 @@ The released data are available in the [`materials`](materials/) directory and i
 
 The accompanying website provides an interactive interface for exploring the dataset, including word-level profiles, filtering, radar/bar/heatmap visualizations, dataset downloads, and access to the codebook.
 
-**Website:** [add link here]
+**Website:** https://cristinac11.github.io/MultiNorms_GER/
 
 ## Repository structure
 
