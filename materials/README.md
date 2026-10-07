@@ -29,6 +29,3 @@ They can also be downloaded from the accompanying project website:
 
 The website additionally provides an interactive interface for exploring the dataset, including word-level experiential profiles, filtering, and visualization of the rating dimensions.
 
-## Citation
-
-Please cite the dataset and associated manuscript when using these materials: 
