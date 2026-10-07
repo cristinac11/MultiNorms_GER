@@ -23,9 +23,7 @@ This directory contains study materials and the datasets associated with the stu
 
 The datasets can be downloaded directly from this repository.
 
-They can also be downloaded from the accompanying project website:
-
-**https://cristinacc11.github.io/german-nouns-norms/**
+They can also be downloaded from the accompanying project website: https://cristinac11.github.io/MultiNorms_GER/
 
 The website additionally provides an interactive interface for exploring the dataset, including word-level experiential profiles, filtering, and visualization of the rating dimensions.
 
