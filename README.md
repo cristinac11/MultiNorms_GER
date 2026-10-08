@@ -4,7 +4,7 @@ Repository accompanying the paper **"A multidimensional normative database of ex
 
 **Affiliation:** Heinrich Heine University Düsseldorf, Faculty of Mathematics and Natural Sciences, Department of Biological Psychology, Germany  
 **Correspondence:** Cristina Cara — cristina.cara@hhu.de  
-**Preprint:** forthcoming — link will be added once publicly available
+**Preprint available on:** https://doi.org/10.31234/osf.io/8kzu6_v1
 
 ## Dataset and website
 
