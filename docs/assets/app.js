@@ -17,7 +17,7 @@
     ["Olfactory perception", "olfactory_perception_mean", "olfactory_perception_std"],
     ["Gustatory perception", "gustatory_perception_mean", "gustatory_perception_std"],
     ["Action", "action_mean", "action_std"],
-    ["Valence", "valence_mean_rescaled", "valence_std"]
+    ["Valence", "valence_abs_mean_rescaled", "valence_abs_std"]
   ];
   const state = { rows: [], filtered: [], page: 1, pageSize: 10, sortKey: "word", sortDirection: 1, selectedDimension: "visual_perception_mean" };
   const $ = (s) => document.querySelector(s);
@@ -128,13 +128,6 @@
       .map(values => Object.fromEntries(headers.map((h, i) => [h, values[i] ?? ""])))
       .map(record => {
         if ("dominant_dimension" in record) record.dominant_dimension = normalizeDominantDimension(record.dominant_dimension);
-
-        // Valence was originally collected on a signed scale centred on zero.
-        // For the website only, display it on the same 1–7 range as the other
-        // experiential dimensions by shifting the mean by +4. The underlying
-        // downloadable CSV remains unchanged.
-        const signedValence = Number(record.valence_mean);
-        if (Number.isFinite(signedValence)) record.valence_mean_rescaled = signedValence + 4;
 
         return record;
       })
@@ -455,7 +448,7 @@
       const value = Number(row[key]), sd = Number(row[sdKey]);
       return `<div class="bar-row"><span class="bar-label">${escapeHtml(label)}</span><div class="bar-track"><div class="bar-fill" style="width:${Number.isFinite(value) ? Math.max(0,Math.min(100,value/7*100)) : 0}%"></div></div><span class="bar-value">${fmt(value)}${Number.isFinite(sd) ? ` ± ${fmt(sd)}` : ""}</span></div>`;
     }).join("");
-    const displayedValence = Number(row.valence_mean_rescaled);
+    const displayedValence = Number(row.valence_abs_mean_rescaled);
     const summaries = [
       ["Dominant dimension", row.dominant_dimension || "—"], ["Exclusivity", fmt(row.exclusivity_score,3)],
       ["Concreteness", fmt(row.concreteness_mean)], ["Familiarity", fmt(row.familiarity_mean)],
