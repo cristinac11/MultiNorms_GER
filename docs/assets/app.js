@@ -448,11 +448,11 @@
       const value = Number(row[key]), sd = Number(row[sdKey]);
       return `<div class="bar-row"><span class="bar-label">${escapeHtml(label)}</span><div class="bar-track"><div class="bar-fill" style="width:${Number.isFinite(value) ? Math.max(0,Math.min(100,value/7*100)) : 0}%"></div></div><span class="bar-value">${fmt(value)}${Number.isFinite(sd) ? ` ± ${fmt(sd)}` : ""}</span></div>`;
     }).join("");
-    const displayedValence = Number(row.valence_abs_mean_rescaled);
+    const displayedValence = Number(row.valence_mean);
     const summaries = [
       ["Dominant dimension", row.dominant_dimension || "—"], ["Exclusivity", fmt(row.exclusivity_score,3)],
       ["Concreteness", fmt(row.concreteness_mean)], ["Familiarity", fmt(row.familiarity_mean)],
-      ["Valence", fmt(displayedValence)], ["Participants", fmt(row.participant_count,0)]
+      ["Valence (signed)", fmt(displayedValence)], ["Participants", fmt(row.participant_count,0)]
     ];
     $("#word-summary").innerHTML = summaries.map(([k,v]) => `<div><dt>${escapeHtml(k)}</dt><dd>${escapeHtml(v)}</dd></div>`).join("");
     const tags = Object.keys(row).filter(k => k.startsWith("germanet_dimension_") && row[k]).map(k => row[k]);
